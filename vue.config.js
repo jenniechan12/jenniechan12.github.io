@@ -1,3 +1,6 @@
 module.exports = {
-  publicPath: "/jenniechan12.github.io/",
-};
+  "publicPath": "/jenniechan12.github.io/",
+  "transpileDependencies": [
+    "vuetify"
+  ]
+}
