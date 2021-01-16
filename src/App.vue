@@ -1,60 +1,35 @@
-<template>
-  <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-main>
-      <HelloWorld/>
-    </v-main>
-  </v-app>
+<template lang="pug">
+  v-app.backgroundColor
+    v-app-bar(app flat color='#eb6b6f' dark)
+      v-btn.ml-2(icon)
+        v-img(src='./assets/logo-color.png' width='40px' height='40px')
+      v-spacer
+      v-btn(text color='#fff6d3' rounded @click='openContactModal = true') Say Hello
+    v-main
+      Contact(:openContactModal.sync='openContactModal')
+      Footer
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
-
+import Footer from "./components/footer";
+import Contact from "./components/contact";
 export default {
-  name: 'App',
+  name: "App",
 
   components: {
-    HelloWorld,
+    Footer,
+    Contact,
   },
 
-  data: () => ({
-    //
-  }),
+  data() {
+    return {
+      openContactModal: false,
+    };
+  },
 };
 </script>
+<style scoped>
+.backgroundColor {
+  background-color: #fff6d3 !important;
+}
+</style>
