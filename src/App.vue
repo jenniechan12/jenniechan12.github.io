@@ -7,18 +7,25 @@
       v-btn(text color='#fff6d3' rounded @click='openContactModal = true') Say Hello
     v-main
       Contact(:openContactModal.sync='openContactModal')
+      Skills
+      RecentWorks
       Footer
 </template>
 
 <script>
 import Footer from "./components/footer";
 import Contact from "./components/contact";
+import Skills from "./components/skills";
+import RecentWorks from "./components/recentWorks";
+
 export default {
   name: "App",
 
   components: {
     Footer,
     Contact,
+    Skills,
+    RecentWorks,
   },
 
   data() {
